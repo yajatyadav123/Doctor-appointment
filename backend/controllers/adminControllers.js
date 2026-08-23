@@ -64,7 +64,7 @@ const addDoctors = async (req, res) => {
         const hashedpassword = await bcrypt.hash(password, salt);
 
         // Multer local image URL
-        const imageUrl = `http://localhost:4000/uploads/${imagefile.filename}`;
+        const imageUrl = `${process.env.BACKEND_URL}/uploads/${imagefile.filename}`;
 
         const doctorData = {
             name,
